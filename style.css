@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "Stapel";
+    src: url("./Stapel_Extra-Light.ttf");
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(8, 8, 8);
+    overflow: hidden;
+}
+
+#welcome {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(8, 8, 8);
+    color: white;
+    font-size: 80px;
+    box-sizing: content-box;
+    display: flex;
+    z-index: 100;
+    transition: display 5s ease;
+}
+
+#welcome h1 {
+    margin: auto;
+    font-family: "Stapel";
+}
+
+#cards {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 16vw;
+    height: 20vw;
+    background-color: orange;
+    margin: auto;
+    background-position: center;
+    background-size: contain;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    opacity: 0;
+    /* Começa invisível */
+    transform: translateX(-50px);
+    transition: transform 0.5s ease, opacity 2s ease;
+    /* transition-delay: 1s; */
+}
+
+.card.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
